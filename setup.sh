@@ -51,4 +51,8 @@ then
 	curl -L https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz --output ~/my_tools/rust-analyzer.gz
 	gunzip ~/my_tools/rust-analyzer.gz
 	chmod +x ~/my_tools/rust-analyzer
+
 fi 
+
+
+git config --global core.editor nvim
