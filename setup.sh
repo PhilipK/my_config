@@ -1,4 +1,5 @@
-mkdir ~/.config/alacritty
-ln -s ~/src/my_configs/alacritty/.alacritty.yml ~/.config/alacritty/alcritty.yml
-ln -s ~/src/my_configs/nvim/init.vim ~/.config/nvim/init.vim
-
+CUR_LOCATION=$(pwd)/
+mkdir ~/.config/
+mkdir ~/.config/nvim/
+ln -s ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
+ln -s ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
