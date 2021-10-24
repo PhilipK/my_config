@@ -168,7 +168,7 @@ nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> gÆ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> gæ <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-let g:EasyMotion_keys='hklyuiopnmqwertzxcvbasdgjfæøå'
+let g:EasyMotion_keys='hklyuiopnmqwertzxcvbasdgjf'
 
 
 " Move to word

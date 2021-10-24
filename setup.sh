@@ -1,16 +1,15 @@
 CUR_LOCATION=$(pwd)/
 
 #ensure folders
-mkdir ~/.config/
-mkdir ~/.config/nvim/
+mkdir -p ~/.config/nvim/
+
 
 #Symlink config files
-ln -s ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
-ln -s ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
-rm ~/.bashrc
-ln -s ${CUR_LOCATION}bash/.bashrc ~/.bashrc
+ln -sf ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
+ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
 
-mkdir ~/my_tools/
+mkdir -p ~/my_tools/
 
 #Intall nvim
 
@@ -45,7 +44,6 @@ then
    echo "install ripgrep"
    cargo install ripgrep
 fi
-
 
 #Rust analyzer server
 if ! hash rust-analyzer &> /dev/null
