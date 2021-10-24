@@ -7,6 +7,19 @@ mkdir ~/.config/nvim/
 #Symlink config files
 ln -s ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
 ln -s ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
+rm ~/.bashrc
+ln -s ${CUR_LOCATION}bash/.bashrc ~/.bashrc
+
+mkdir ~/my_tools/
+
+#Intall nvim
+
+if ! hash nvim &> /dev/null
+then
+  echo "install nvim"
+  curl -L https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage --output ~/my_tools/nvim
+  chmod +x ~/my_tools/nvim
+fi
 
 
 #Install Rust stuff
@@ -21,7 +34,7 @@ then
    cargo install alacritty
 fi
 
-if ! hash "z" &> /dev/null
+if ! hash z &> /dev/null
 then
    echo "install zoxide"
    cargo install zoxide
@@ -33,3 +46,11 @@ then
    cargo install ripgrep
 fi
 
+
+#Rust analyzer server
+if ! hash rust-analyzer &> /dev/null
+then 
+	curl -L https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz --output ~/my_tools/rust-analyzer.gz
+	gunzip ~/my_tools/rust-analyzer.gz
+	chmod +x ~/my_tools/rust-analyzer
+fi 
