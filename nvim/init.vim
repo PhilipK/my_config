@@ -183,6 +183,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 noremap <silent> <c-s> :update<CR>
 
+nnoremap <F5> :!cargo run<cr>
+
+
 " have a fixed column for the diagnostics to appear in
 " this removes the jitter when warnings/errors flow in
 set signcolumn=yes
