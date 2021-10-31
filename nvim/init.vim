@@ -183,7 +183,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 noremap <silent> <c-s> :update<CR>
 
-nnoremap <F5> :!cargo run<cr>
+nnoremap <F5> :update<CR> :!cargo run<cr>
+nnoremap <F6> :update<CR> :!cargo test<cr>
+
 
 
 " have a fixed column for the diagnostics to appear in
