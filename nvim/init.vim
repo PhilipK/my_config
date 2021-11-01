@@ -2,6 +2,8 @@ set showmatch
 set mouse=a
 set autoindent
 set clipboard=unnamedplus
+let mapleader = " " " map leader to Space
+
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
