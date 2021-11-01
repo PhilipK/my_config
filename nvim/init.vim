@@ -2,7 +2,16 @@ set showmatch
 set mouse=a
 set autoindent
 set clipboard=unnamedplus
-let mapleader = " " " map leader to Space
+
+let mapleader = "\<Space>"
+
+" <leader><leader> toggles between buffers
+nnoremap <leader><leader> <c-^>
+
+" Stop showing help on f1 missclick
+map <F1> <Esc>
+imap <F1> <Esc>
+
 
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
