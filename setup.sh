@@ -21,6 +21,12 @@ then
 fi
 
 
+if ! hash alacritty &> /dev/null
+then
+   cargo install alacritty
+fi
+
+
 #Install Rust stuff
 if ! hash cargo &> /dev/null
 then
@@ -28,22 +34,8 @@ then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
-if ! hash alacritty &> /dev/null
-then
-   cargo install alacritty
-fi
-
-if ! hash z &> /dev/null
-then
-   echo "install zoxide"
-   cargo install zoxide
-fi
-
-if ! hash rg &> /dev/null
-then
-   echo "install ripgrep"
-   cargo install ripgrep
-fi
+cargo install zoxide
+cargo install ripgrep
 
 #Rust analyzer server
 if ! hash rust-analyzer &> /dev/null
@@ -51,9 +43,21 @@ then
 	curl -L https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz --output ~/my_tools/rust-analyzer.gz
 	gunzip ~/my_tools/rust-analyzer.gz
 	chmod +x ~/my_tools/rust-analyzer
+	rm ~/my_tools/rust-analyzer.gz
+
 
 fi 
 
+#upx
+if ! hash upx &> /dev/null
+then 
+	curl -L https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz --output ~/my_tools/upx.xz
+	tar -xf ~/my_tools/upx.xz -C ~/my_tools/
+	mv ~/my_tools/upx-3.96-amd64_linux/upx ~/my_tools/upx
+	rm ~/my_tools/upx.xz
+	rm -rf ~/my_tools/upx-3.96-amd64_linux
+	chmod +x ~/my_tools/upx
+fi 
 
 git config --global core.editor nvim
 git config --global user.name "Philip Kristoffersen"
