@@ -194,6 +194,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 noremap <silent> <c-s> :update<CR>
 
+nnoremap <F4> :update<CR> :! cargo check<cr>
 nnoremap <F5> :update<CR> :! RUST_BACKTRACE=full cargo run<cr>
 nnoremap <F6> :update<CR> :!cargo test<cr>
 
