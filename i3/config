@@ -140,11 +140,3 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# Stop HHDs
-exec always sudo hdparm -y /dev/sdc
-exec always sudo hdparm -y /dev/sdc
-
-# set wallapper
-exec always feh --bg-scale /home/philip/Wallpapers/wallhaven-g7wog3.png
-

@@ -81,6 +81,7 @@ fi
 git config --global core.editor nvim
 git config --global user.name "Philip Kristoffersen"
 git config --global user.email "philipkristoffersen@gmail.com"
+git config --global credential.helper store
 
 #Font
 if hash pacman &> /dev/null
