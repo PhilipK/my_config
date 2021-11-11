@@ -77,6 +77,8 @@ bindsym $mod+Ctrl+h workspace prev
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
   bindsym $mod+b exec chromium
   bindsym $mod+Ctrl+Shift+s exec systemctl suspend 
+  bindsym $mod+w exec chromium "https://workflowy.com/" 
+  bindsym $mod+c exec code
 
 # Workspace Bindings
   bindsym $mod+1 workspace $workspace1

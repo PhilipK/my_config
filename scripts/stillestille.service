@@ -1,0 +1,8 @@
+[Unit]
+Description=HDD Standby
+
+[Service]
+ExecStart=/usr/bin/stillestille.sh
+
+[Install]
+WantedBy=multi-user.target 
