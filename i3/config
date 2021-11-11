@@ -34,6 +34,7 @@
   font pango:System SauceCodePro Nerd Font 8
   floating_modifier $mod
   new_window 1pixel
+  hide_edge_borders both
 
 
 # Window Bindings
@@ -61,7 +62,8 @@
     bindsym Escape mode "default"
   }
 
-bindsym $mod+Tab workspace next
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev
 
 # Reload/Restart Bindings
   bindsym $mod+Shift+c reload
@@ -71,6 +73,7 @@ bindsym $mod+Tab workspace next
   bindsym $mod+Return exec alacritty
   bindsym $mod+d exec dmenu_run
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+  bindsym $mod+b exec chromium
 
 # Workspace Bindings
   bindsym $mod+1 workspace $workspace1
