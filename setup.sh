@@ -8,16 +8,30 @@ mkdir -p ~/.config/nvim/
 ln -sf ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
 ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
+ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 
 mkdir -p ~/my_tools/
 
-#Intall nvim
 
+#Intall nvim
 if ! hash nvim &> /dev/null
 then
-  echo "install nvim"
-  curl -L https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage --output ~/my_tools/nvim
-  chmod +x ~/my_tools/nvim
+
+   if hash pacman &> /dev/null
+   then
+      echo "install nvim"
+      curl -L https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage --output ~/my_tools/nvim
+      chmod +x ~/my_tools/nvim
+   else
+      pacman -S neovim
+   fi
+fi
+
+#Install Rust stuff
+if ! hash cargo &> /dev/null
+then
+   echo "install rust"
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
 
@@ -27,36 +41,41 @@ then
 fi
 
 
-#Install Rust stuff
-if ! hash cargo &> /dev/null
-then
-  echo "install rust"
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-fi
-
 cargo install zoxide
 cargo install ripgrep
 
 #Rust analyzer server
 if ! hash rust-analyzer &> /dev/null
 then 
-	curl -L https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz --output ~/my_tools/rust-analyzer.gz
-	gunzip ~/my_tools/rust-analyzer.gz
-	chmod +x ~/my_tools/rust-analyzer
-	rm ~/my_tools/rust-analyzer.gz
 
+   if hash pacman &> /dev/null
+   then
+      curl -L https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz --output ~/my_tools/rust-analyzer.gz
+      gunzip ~/my_tools/rust-analyzer.gz
+      chmod +x ~/my_tools/rust-analyzer
+      rm ~/my_tools/rust-analyzer.gz
+   else
+      pacman -S rust-analyzer
+   fi
 
 fi 
 
 #upx
 if ! hash upx &> /dev/null
 then 
-	curl -L https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz --output ~/my_tools/upx.xz
-	tar -xf ~/my_tools/upx.xz -C ~/my_tools/
-	mv ~/my_tools/upx-3.96-amd64_linux/upx ~/my_tools/upx
-	rm ~/my_tools/upx.xz
-	rm -rf ~/my_tools/upx-3.96-amd64_linux
-	chmod +x ~/my_tools/upx
+   if hash pacman &> /dev/null
+   then
+      packman -S upx
+   else
+      curl -L https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz --output ~/my_tools/upx.xz
+      tar -xf ~/my_tools/upx.xz -C ~/my_tools/
+      mv ~/my_tools/upx-3.96-amd64_linux/upx ~/my_tools/upx
+      rm ~/my_tools/upx.xz
+      rm -rf ~/my_tools/upx-3.96-amd64_linux
+      chmod +x ~/my_tools/upx
+
+   fi
+
 fi 
 
 git config --global core.editor nvim
