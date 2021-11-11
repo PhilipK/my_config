@@ -19,19 +19,19 @@
   set $base0E #c0b7f9
   set $base0F #fcc09e
 
-  set $workspace1 = 1
-  set $workspace2 = 2
-  set $workspace3 = 3
-  set $workspace4 = 4
-  set $workspace5 = 5
-  set $workspace6 = 6
-  set $workspace7 = 7
-  set $workspace8 = 8
-  set $workspace9 = 9
-  set $workspace10 = 10
+  set $workspace1 
+  set $workspace2 
+  set $workspace3 
+  set $workspace4 4
+  set $workspace5 5
+  set $workspace6 6
+  set $workspace7 7
+  set $workspace8 8
+  set $workspace9 9 
+  set $workspace10 
 
 # Settings
-  font pango:System SauceCodePro Nerd Font 9
+  font pango:System SauceCodePro Nerd Font 8
   floating_modifier $mod
   new_window 1pixel
 
@@ -60,6 +60,8 @@
     bindsym l resize grow width 10 px or 10 ppt
     bindsym Escape mode "default"
   }
+
+bindsym $mod+Tab workspace next
 
 # Reload/Restart Bindings
   bindsym $mod+Shift+c reload

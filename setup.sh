@@ -82,4 +82,18 @@ git config --global core.editor nvim
 git config --global user.name "Philip Kristoffersen"
 git config --global user.email "philipkristoffersen@gmail.com"
 
+#Font
+if hash pacman &> /dev/null
+then
+   pacman -S nerd-fonts-source-code-pro
+else
+   sudo mkdir /usr/share/fonts/ttf/
+   sudo mkdir /usr/share/fonts/ttf/SauceCodeProNerdFont/
 
+   sudo curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf --output "/usr/share/fonts/ttf/SauceCodeProNerdFont/Regular.ttf"
+   sudo curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.tt --output "/usr/share/fonts/ttf/SauceCodeProNerdFont/Bold.ttf"
+
+
+fi
+
+sudo fc-cache
