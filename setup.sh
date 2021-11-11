@@ -2,6 +2,8 @@ CUR_LOCATION=$(pwd)/
 
 #ensure folders
 mkdir -p ~/.config/nvim/
+mkdir -p ~/.config/i3blocks/
+mkdir -p ~/.config/i3/
 
 
 #Symlink config files
@@ -9,7 +11,7 @@ ln -sf ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
 ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
-
+ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 mkdir -p ~/my_tools/
 
 
@@ -73,9 +75,7 @@ then
       rm ~/my_tools/upx.xz
       rm -rf ~/my_tools/upx-3.96-amd64_linux
       chmod +x ~/my_tools/upx
-
    fi
-
 fi 
 
 git config --global core.editor nvim
@@ -85,15 +85,13 @@ git config --global user.email "philipkristoffersen@gmail.com"
 #Font
 if hash pacman &> /dev/null
 then
-   pacman -S nerd-fonts-source-code-pro
+   sudo pacman -S nerd-fonts-source-code-pro
 else
    sudo mkdir /usr/share/fonts/ttf/
    sudo mkdir /usr/share/fonts/ttf/SauceCodeProNerdFont/
 
    sudo curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf --output "/usr/share/fonts/ttf/SauceCodeProNerdFont/Regular.ttf"
    sudo curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.tt --output "/usr/share/fonts/ttf/SauceCodeProNerdFont/Bold.ttf"
-
-
+   sudo fc-cache
 fi
 
-sudo fc-cache

@@ -20,21 +20,21 @@
   set $base0F #fcc09e
 
   set $workspace1 
-  set $workspace2 
-  set $workspace3 
+  set $workspace2 Relax
+  set $workspace3 Messages
   set $workspace4 4
   set $workspace5 5
   set $workspace6 6
   set $workspace7 7
   set $workspace8 8
   set $workspace9 9 
-  set $workspace10 
+  set $workspace10 Music
 
 # Settings
   font pango:System SauceCodePro Nerd Font 8
   floating_modifier $mod
   new_window 1pixel
-  hide_edge_borders both
+  hide_edge_borders vertical
 
 
 # Window Bindings
@@ -63,6 +63,7 @@
   }
 
 bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+h workspace prev
 
 # Reload/Restart Bindings
@@ -71,9 +72,11 @@ bindsym $mod+Ctrl+h workspace prev
 
 # Program Bindings
   bindsym $mod+Return exec alacritty
+  bindsym $mod+t exec alacritty
   bindsym $mod+d exec dmenu_run
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
   bindsym $mod+b exec chromium
+  bindsym $mod+Ctrl+Shift+s exec systemctl suspend 
 
 # Workspace Bindings
   bindsym $mod+1 workspace $workspace1
@@ -106,14 +109,14 @@ bindsym $mod+Ctrl+h workspace prev
 
 # Bar
   bar {
-    status_command i3status
+    status_command i3blocks
     tray_output primary
 
     colors {
       separator $base03
       background $base01
       statusline $base05
-      focused_workspace $base0C $base0D $base00
+      focused_workspace $base01 $base01 $base07
       active_workspace $base02 $base02 $base07
       inactive_workspace $base01 $base01 $base03
       urgent_workspace $base08 $base08 $base07
@@ -138,5 +141,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Stop HHDs
+exec always sudo hdparm -y /dev/sdc
+exec always sudo hdparm -y /dev/sdc
 
+# set wallapper
+exec always feh --bg-scale /home/philip/Wallpapers/wallhaven-g7wog3.png
 
