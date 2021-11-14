@@ -7,10 +7,45 @@
 
 
 # Global properties
-separator=false
-separator_block_width=15
+separator=true
+separator_block_width=25
+
+[cpu_usage2]
+command=$SCRIPT_DIR/cpu_usage2/cpu_usage2
+markup=pango
+interval=persist
+LABEL= 
+DECIMALS=0
+
+[gpu-load]
+command=$SCRIPT_DIR/gpu-load/gpu-load
+label=  
+interval=10
+#min_width=GPU 100% 100% 100% 100%
+GPU_BRAND=NVIDIA
+#T_WARN=70
+#T_CRIT=90
+
+[memory]
+label= 
+command=$SCRIPT_DIR/memory/memory
+interval=5
+PERCENT=false
+
+[disk]
+command=$SCRIPT_DIR/disk/disk
+LABEL=   
+DIR=/
+ALERT_LOW=10
+interval=60
+
+[volume]
+command=pamixer --get-volume-human
+LABEL= 
+interval=once
+signal=10
 
 [time]
-command=date '+%m-%d %H:%M'
+command=date '+%d-%m %H:%M'
 interval=60
 

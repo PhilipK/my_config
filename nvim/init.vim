@@ -1,6 +1,7 @@
 set showmatch
 set mouse=a
 set autoindent
+
 set clipboard=unnamedplus
 
 let mapleader = "\<Space>"

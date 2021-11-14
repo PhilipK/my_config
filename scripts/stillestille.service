@@ -1,8 +1,11 @@
 [Unit]
 Description=HDD Standby
+After=suspend.target
 
 [Service]
 ExecStart=/usr/bin/stillestille.sh
+User=root
+Type=oneshot
 
 [Install]
-WantedBy=multi-user.target 
+WantedBy=multi-user.target sleep.target

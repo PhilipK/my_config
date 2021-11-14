@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 sleep 15
 
 sudo hdparm -y /dev/sdb

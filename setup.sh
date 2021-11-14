@@ -12,6 +12,7 @@ ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
+ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 mkdir -p ~/my_tools/
 
 
@@ -84,9 +85,9 @@ git config --global user.email "philipkristoffersen@gmail.com"
 git config --global credential.helper store
 
 #Font
-if hash pacman &> /dev/null
+if hash yay &> /dev/null
 then
-   sudo pacman -S nerd-fonts-source-code-pro
+   sudo yay -S --needed nerd-fonts-source-code-pro
 else
    sudo mkdir /usr/share/fonts/ttf/
    sudo mkdir /usr/share/fonts/ttf/SauceCodeProNerdFont/
@@ -96,3 +97,28 @@ else
    sudo fc-cache
 fi
 
+#fix copy paste in neovim
+#if hash pacman &> /dev/null
+#then
+#   sudo pacman -S --needed xsel
+#fi
+
+if hash pacman &> /dev/null
+then
+   sudo pacman -S --needed pamixer playerctl nvidia-settings xsel 
+fi
+
+#Fix time when dual booting
+timedatectl set-local-rtc 1
+
+if [ ! -d "/home/philip/src/i3blocks-contrib" ]
+then
+mkdir ~/src/
+git clone https://github.com/vivien/i3blocks-contrib ~/src/i3blocks-contrib
+fi
+
+
+sudo ln -sf scripts/stillestille.sh /lib/systemd/system-sleep/stillestille.sh
+
+
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
