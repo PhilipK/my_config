@@ -1,5 +1,5 @@
 {
-    "border": "pixel",
+    "border": "none",
     "current_border_width": 2,
     "floating": "auto_off",
     "geometry": {
@@ -20,7 +20,7 @@
 }
 
 {
-    "border": "pixel",
+    "border": "none",
     "floating": "auto_off",
     "layout": "splitv",
     "marks": [],
@@ -28,7 +28,7 @@
     "type": "con",
     "nodes": [
         {
-            "border": "pixel",
+            "border": "none",
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
@@ -42,14 +42,13 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^Chromium$",
-"title": "^WorkFlowy\\ \\-\\ Organize\\ your\\ brain\\.\\ \\-\\ Chromium$"
+                "class": "^Chromium$"
                }
             ],
             "type": "con"
         },
         {
-            "border": "pixel",
+            "border": "none",
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {

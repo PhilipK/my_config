@@ -70,6 +70,18 @@ bindsym $mod+Ctrl+l workspace next
 bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+h workspace prev
 
+
+#Scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+u move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+u scratchpad show
+
+
+# Clipboard
+bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
 # Reload/Restart Bindings
   bindsym $mod+Shift+c reload
   bindsym $mod+Shift+r restart
@@ -128,12 +140,12 @@ for_window [class="Steam"] move to workspace $workspace4
 
     colors {
       separator $base03
-      background $base01
+      background #1d2129
       statusline $base05
-      focused_workspace $base01 $base01 $base07
+      focused_workspace #1d2129 #1d2129 $base07
       active_workspace $base02 $base02 $base07
-      inactive_workspace $base01 $base01 $base03
-      urgent_workspace $base01 $base01 #81a1c1
+      inactive_workspace #1d2129 #1d2129 $base03
+      urgent_workspace #1d2129 #1d2129 #81a1c1
     }
   }
 
@@ -153,15 +165,28 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
-exec --no-startup-id feh --bg-fill ~/Wallpapers/archlinux.png
+exec --no-startup-id nitrogen --restore
 
+for_window [title="alascratchpad"] move scratchpad 
+exec sleep 2 &&  exec --no-startup-id alacritty -title alascratchpad
 
 # Load workspaces
 # Main workspace
-exec --no-startup-id i3-msg 'append_layout /home/philip/.config/i3/workspaces/workspace-1.json; exec chromium --new-window "https://workflowy.com/"; exec chromium; exec alacritty; workspace $workspace9; exec alacritty -t Config --working-directory /home/philip/src/my_config; workspace $workspace1'
-
+exec --no-startup-id i3-msg 'append_layout /home/philip/.config/i3/workspaces/workspace-1.json; exec chromium;  workspace $workspace9; exec alacritty -t Config --working-directory /home/philip/src/my_config; workspace $workspace1; exec sleep 1 && chromium --new-window "https://workflowy.com/";'
 # Others
 exec --no-startup-id code
 exec --no-startup-id slack
-
 exec --no-startup-id spotify
+exec --no-startup-id steam
+
+#Gaps
+#gaps outer 0
+gaps inner 15
+
+
+bindsym $mod+g exec i3-msg 'gaps inner all toggle 15'
+#bindsym $mod+Shift+g exec i3-msg 'gaps inner all toggl'
+
+smart_gaps on
+smart_borders no_gaps
+#exec --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"

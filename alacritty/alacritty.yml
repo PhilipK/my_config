@@ -18,6 +18,10 @@ cursor:
   vi_mode_style: Block
 live_config_reload: true
 
+
+background_opacity: 1
+
+
 hints:
   alphabet: "jfkdlsahgurieowpq"
 
@@ -33,7 +37,8 @@ hints:
 
 colors:
   primary:
-    background: '#2e3440'
+    #background: '#2e3440'
+    background: '#1d2129'
     foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
