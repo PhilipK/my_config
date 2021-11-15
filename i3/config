@@ -167,12 +167,14 @@ bindsym $mod+e layout toggle split
 
 exec --no-startup-id nitrogen --restore
 
-for_window [title="alascratchpad"] move scratchpad 
-exec sleep 2 &&  exec --no-startup-id alacritty -title alascratchpad
-
 # Load workspaces
 # Main workspace
-exec --no-startup-id i3-msg 'append_layout /home/philip/.config/i3/workspaces/workspace-1.json; exec chromium;  workspace $workspace9; exec alacritty -t Config --working-directory /home/philip/src/my_config; workspace $workspace1; exec sleep 1 && chromium --new-window "https://workflowy.com/";'
+exec --no-startup-id i3-msg 'append_layout /home/philip/.config/i3/workspaces/workspace-1.json; exec chromium;  workspace $workspace9; exec alacritty -t Config --working-directory /home/philip/src/my_config; workspace $workspace1; exec chromium --new-window "https://workflowy.com/";'
+
+exec --no-startup-id sleep 3 && i3-msg '[ title="WorkFlowy*" ] move scratchpad'
+
+bindsym $mod+shift+w [ title="WorkFlowy*" ] move scratchpad
+
 # Others
 exec --no-startup-id code
 exec --no-startup-id slack
