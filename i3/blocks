@@ -20,33 +20,22 @@ instance=spotify
 interval=10
 signal=10
 
-[docker]
-command=$SCRIPT_DIR/docker/docker
-interval=25
-LABEL= 
-
-[temperature]
-command=$SCRIPT_DIR/temperature/temperature
-interval=10
-SENSOR_CHIP=nct6797-isa-0a20
-SENSOR_INPUT=temp2_input
-
 [cpu_usage2]
 command=$SCRIPT_DIR/cpu_usage2/cpu_usage2
 markup=pango
 interval=persist
-LABEL= 
+LABEL=
 DECIMALS=0
 
 [memory]
-label= 
+label=
 command=$SCRIPT_DIR/memory/memory
 interval=5
 PERCENT=false
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
-LABEL=   
+LABEL=
 DIR=/
 ALERT_LOW=10
 interval=60

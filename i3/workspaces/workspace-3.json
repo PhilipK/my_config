@@ -1,0 +1,77 @@
+{
+    "border": "none",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2082,
+       "width": 1884,
+       "x": 24,
+       "y": 24
+    },
+    "marks": [],
+    "name": "Slack",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Slack$",
+        "instance": "^slack$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "none",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2082,
+               "width": 2652,
+               "x": 34,
+               "y": 34
+            },
+            "marks": [],
+            "name": "Messenger - Chromium",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Chromium$",
+                "instance": "^chromium$",
+                 "title": "^Messenger\\ \\-\\ Chromium$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2082,
+               "width": 2652,
+               "x": 44,
+               "y": 44
+            },
+            "marks": [],
+            "name": "WhatsApp - Chromium",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Chromium$",
+                "instance": "^chromium$",
+               "title": "^WhatsApp\\ \\-\\ Chromium$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

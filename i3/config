@@ -19,16 +19,16 @@
   set $base0E #c0b7f9
   set $base0F #fcc09e
 
-  set $workspace1 1: 
-  set $workspace2 2: 
-  set $workspace3 3: 
-  set $workspace4 4: 
+  set $workspace1 
+  set $workspace2 
+  set $workspace3 
+  set $workspace4 
   set $workspace5 5
   set $workspace6 6
   set $workspace7 7
   set $workspace8 8
-  set $workspace9 9: 
-  set $workspace10 10: 
+  set $workspace9 9
+  set $workspace10 
 
 # Settings
   font pango:System SauceCodePro Nerd Font 8
@@ -67,8 +67,10 @@ set $mouse_move /home/philip/my_tools/mouse_center
   }
 
 bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+j workspace next
 bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+h workspace prev
+bindsym $mod+Ctrl+k workspace prev
 
 
 #Scratchpad
@@ -119,13 +121,7 @@ bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/pn
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Assign workspaces
-assign [class="Spotify"] $workspace10
-for_window [class="Spotify"] move to workspace $workspace10
-assign [class="slack"] $workspace3
-for_window [class="Slack"] move to workspace $workspace3
-assign [class="code-oss"] $workspace2
-
-for_window [class="Steam"] move to workspace $workspace4
+#for_window [class="Slack"] move to workspace $workspace3
 
 # Widow Colours
   client.focused $base0D $base0D $base00 $base01
@@ -145,7 +141,7 @@ for_window [class="Steam"] move to workspace $workspace4
       focused_workspace #1d2129 #1d2129 $base07
       active_workspace $base02 $base02 $base07
       inactive_workspace #1d2129 #1d2129 $base03
-      urgent_workspace #1d2129 #1d2129 #81a1c1
+      urgent_workspace #1d2129 #1d2129 #bf616a
     }
   }
 
@@ -165,30 +161,54 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
+#Wallpaper
 exec --no-startup-id nitrogen --restore
 
 # Load workspaces
 # Main workspace
-exec --no-startup-id i3-msg 'append_layout /home/philip/.config/i3/workspaces/workspace-1.json; exec chromium;  workspace $workspace9; exec alacritty -t Config --working-directory /home/philip/src/my_config; workspace $workspace1; exec chromium --new-window "https://workflowy.com/";'
+exec --no-startup-id i3-msg "append_layout /home/philip/.config/i3/workspaces/workspace-1.json"
+exec --no-startup-id chromium --new-window
+exec --no-startup-id alacritty -t Config --working-directory /home/philip/src/my_config
 
-exec --no-startup-id sleep 3 && i3-msg '[ title="WorkFlowy*" ] move scratchpad'
+#Messages
 
-bindsym $mod+shift+w [ title="WorkFlowy*" ] move scratchpad
+exec --no-startup-id i3-msg "workspace $workspace3; append_layout /home/philip/.config/i3/workspaces/workspace-3.json"
+for_window [title="Messenger"] move to workspace $workspace3
+for_window [title="WhatsApp"] move to workspace $workspace3
+assign [class="Slack"] $workspace3
 
-# Others
-exec --no-startup-id code
+exec --no-startup-id chromium --new-window "https://www.messenger.com/"
+exec --no-startup-id chromium --new-window  "https://web.whatsapp.com/"
 exec --no-startup-id slack
+
+
+#Music
 exec --no-startup-id spotify
+for_window [class="Spotify"] move to workspace $workspace10
+
+#Code
+assign [class="Code"] $workspace2
+exec --no-startup-id code
+
+#Games
+assign [class="Steam"] $workspace4
 exec --no-startup-id steam
 
+
+# Scratchpad
+exec --no-startup-id /usr/share/applications/workflowy.desktop
+exec --no-startup-id sleep 3 && i3-msg '[ class="WorkFlowy" ] move scratchpad'
+
+
 #Gaps
-#gaps outer 0
-gaps inner 15
+gaps inner 12
 
-
-bindsym $mod+g exec i3-msg 'gaps inner all toggle 15'
-#bindsym $mod+Shift+g exec i3-msg 'gaps inner all toggl'
+bindsym $mod+g exec i3-msg 'gaps inner all toggle 12'
 
 smart_gaps on
 smart_borders no_gaps
-#exec --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+
+
+
+#Back to workspace 1
+exec --no-startup-id i3-msg "workspace $workspace1"
