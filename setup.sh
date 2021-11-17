@@ -29,7 +29,11 @@ sudo pacman --needed -S neovim \
    playerctl \
    xsel \
    dmenu \
-   steam
+   xdotool \
+   i3blocks
+
+
+sudo pacman --needed -S steam 
 
 #YAY
 
@@ -45,11 +49,11 @@ makepkg -si
 
 fi
 
-yay --needed -S nerd-fonts-source-code-pro \
+yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-source-code-pro \
    visual-studio-code-bin \
    spotify \
    workflowy \
-   slack \
+   slack-desktop \
    zoxide
 
 #Fonts

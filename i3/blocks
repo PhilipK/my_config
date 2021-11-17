@@ -10,22 +10,26 @@
 separator=true
 separator_block_width=25
 
-[i3-focusedwindow]
-command=$SCRIPT_DIR/i3-focusedwindow/i3-focusedwindow 50
-interval=persist
+#[i3-focusedwindow]
+#command=$SCRIPT_DIR/i3-focusedwindow/i3-focusedwindow 50
+#interval=10
+#
+#[mediaplayer]
+#command=$SCRIPT_DIR/mediaplayer/mediaplayer
+#instance=spotify
+#interval=10
+#signal=10
+#
+#[cpu_usage2]
+#command=$SCRIPT_DIR/cpu_usage2/cpu_usage2
+#markup=pango
+#interval=10
+#LABEL=
+#DECIMALS=0
 
-[mediaplayer]
-command=$SCRIPT_DIR/mediaplayer/mediaplayer
-instance=spotify
+[load_average]
+command=$SCRIPT_DIR/load_average/load_average
 interval=10
-signal=10
-
-[cpu_usage2]
-command=$SCRIPT_DIR/cpu_usage2/cpu_usage2
-markup=pango
-interval=persist
-LABEL=
-DECIMALS=0
 
 [memory]
 label=
