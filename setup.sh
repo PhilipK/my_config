@@ -19,14 +19,6 @@ sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 mkdir -p ~/my_tools/
 
 
-if [ ! -d "/home/philip/src/NordArc" ]
-then
-mkdir ~/src/
-git clone https://github.com/robertovernina/NordArc ~/src/NordArc
-ln -sf  ~/src/NordArc/NordArc-Theme  ~/.themes/NordArc-Theme
-ln -sf  ~/src/NordArc/NordArc-Icons  ~/.icons/NordArc-Icons
-fi
-
 
 #Pacman
 sudo pacman --needed -S neovim \
@@ -45,6 +37,16 @@ sudo pacman --needed -S neovim \
 
 
 sudo pacman --needed -S steam 
+
+if [ ! -d "/home/philip/src/NordArc" ]
+then
+mkdir ~/src/
+git clone https://github.com/robertovernina/NordArc ~/src/NordArc
+ln -sf  ~/src/NordArc/NordArc-Theme  ~/.themes/NordArc-Theme
+ln -sf  ~/src/NordArc/NordArc-Icons  ~/.icons/NordArc-Icons
+fi
+
+
 
 #YAY
 
