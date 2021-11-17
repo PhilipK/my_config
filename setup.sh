@@ -70,3 +70,11 @@ then
 mkdir ~/src/
 git clone https://github.com/vivien/i3blocks-contrib ~/src/i3blocks-contrib
 fi
+
+
+
+echo "Here some links to visit"
+echo "Nord Theme: https://chrome.google.com/webstore/detail/nord/abehfkkfjlplnjadfcjiflnejblfmmpj"
+
+echo "Last Pass : https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd"
+echo "Vimium : https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb"
