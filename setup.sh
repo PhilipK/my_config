@@ -14,10 +14,19 @@ ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
+ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
 sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 mkdir -p ~/my_tools/
 
-ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
+
+if [ ! -d "/home/philip/src/NordArc" ]
+then
+mkdir ~/src/
+git clone https://github.com/robertovernina/NordArc ~/src/NordArc
+ln -sf  ~/src/NordArc/NordArc-Theme  ~/.themes/NordArc-Theme
+ln -sf  ~/src/NordArc/NordArc-Icons  ~/.icons/NordArc-Icons
+fi
+
 
 #Pacman
 sudo pacman --needed -S neovim \
@@ -29,7 +38,7 @@ sudo pacman --needed -S neovim \
    pamixer \
    playerctl \
    xsel \
-   dmenu \
+   rofi \
    xdotool \
    i3blocks \
    picom
@@ -58,6 +67,9 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    slack-desktop \
    zoxide
 
+ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
+
+
 #Fonts
 fc-cache 
 
@@ -77,6 +89,8 @@ then
 mkdir ~/src/
 git clone https://github.com/vivien/i3blocks-contrib ~/src/i3blocks-contrib
 fi
+
+i
 
 
 

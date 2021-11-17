@@ -91,7 +91,9 @@ bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/pn
 # Program Bindings
   bindsym $mod+Return exec alacritty
   bindsym $mod+t exec alacritty
-  bindsym $mod+d exec dmenu_run
+  bindsym $mod+d exec rofi -show run -theme nord-oneline 
+  bindsym $mod+Ctrl+d exec rofi -theme nord-oneline -show window 
+  bindsym $mod+Shift+d exec rofi -theme nord-oneline -show window 
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
   bindsym $mod+b exec chromium
   bindsym $mod+Ctrl+Shift+s exec systemctl suspend 
