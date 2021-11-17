@@ -14,6 +14,7 @@ ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
+sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 mkdir -p ~/my_tools/
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
@@ -30,7 +31,8 @@ sudo pacman --needed -S neovim \
    xsel \
    dmenu \
    xdotool \
-   i3blocks
+   i3blocks \
+   picom
 
 
 sudo pacman --needed -S steam 

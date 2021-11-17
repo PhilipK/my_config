@@ -29,7 +29,7 @@ separator_block_width=25
 
 [load_average]
 command=$SCRIPT_DIR/load_average/load_average
-interval=10
+interval=3
 
 [memory]
 label=

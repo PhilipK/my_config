@@ -196,19 +196,22 @@ exec --no-startup-id steam
 
 
 # Scratchpad
-exec --no-startup-id /usr/share/applications/workflowy.desktop
+exec --no-startup-id workflowy
 exec --no-startup-id sleep 3 && i3-msg '[ class="WorkFlowy" ] move scratchpad'
 
 
 #Gaps
-gaps inner 12
+gaps inner 20
 
-bindsym $mod+g exec i3-msg 'gaps inner all toggle 12'
+bindsym $mod+g exec i3-msg 'gaps inner all toggle 20'
 
 smart_gaps on
 smart_borders no_gaps
 
 exec setxkbmap -layout dk
+
+#picom
+exec --no-startup-id picom
 
 #Back to workspace 1
 exec --no-startup-id i3-msg "workspace $workspace1"
