@@ -13,6 +13,7 @@ ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
+ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
 mkdir -p ~/my_tools/
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
