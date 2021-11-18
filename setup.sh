@@ -16,6 +16,8 @@ ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
 ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
 ln -sf ${CUR_LOCATION}scripts/messages ~/my_tools/messages
+ln -sf ${CUR_LOCATION}xorg/xinitrc ~/.xinitrc
+
 sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 mkdir -p ~/my_tools/
 
@@ -24,6 +26,8 @@ mkdir -p ~/my_tools/
 #Pacman
 sudo pacman --needed -S neovim \
    alacritty \
+   xorg \
+   xorg-xinit \
    upx \
    git \
    tldr \
