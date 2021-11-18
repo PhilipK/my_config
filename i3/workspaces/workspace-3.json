@@ -43,9 +43,7 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^Chromium$",
-                "instance": "^chromium$",
-                 "title": "^Messenger\\ \\-\\ Chromium$"
+        "instance": "^www.messenger.com$"
                }
             ],
             "type": "con"
@@ -65,9 +63,7 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^Chromium$",
-                "instance": "^chromium$",
-               "title": "^WhatsApp\\ \\-\\ Chromium$"
+                  "instance": "^web.whatsapp.com$"
                }
             ],
             "type": "con"

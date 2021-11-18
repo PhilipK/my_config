@@ -15,6 +15,7 @@ ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
 ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
+ln -sf ${CUR_LOCATION}scripts/messages ~/my_tools/messages
 sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 mkdir -p ~/my_tools/
 
