@@ -83,6 +83,11 @@ bindsym $mod+u scratchpad show
 # Wifi
 bindsym $mod+n exec rofi-wifi-menu.sh
 
+# Bluetooth
+ 
+bindsym $mod+Ctrl+b exec --no-startup-id rofi-bluetooth
+
+
 #Audio
 bindsym $mod+a exec pavucontrol
 

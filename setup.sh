@@ -13,7 +13,7 @@ ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
 ln -sf ${CUR_LOCATION}bash/.bash_profile ~/.bash_profile
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
-ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
+#ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
 ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
 ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
 ln -sf ${CUR_LOCATION}scripts/messages ~/my_tools/messages
@@ -57,6 +57,8 @@ sudo pacman --needed -S neovim \
    chromium \
    nitrogen \
    glances \
+   bluez \
+   bluez-utils \
    xclip
 
 sudo pacman --needed -S steam 
@@ -91,7 +93,7 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    workflowy \
    slack-desktop \
    zoxide \
-   ttf-font-awesome
+   rofi-bluetooth-git 
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
 
