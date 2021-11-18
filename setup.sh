@@ -29,6 +29,7 @@ sudo pacman --needed -S neovim \
    alacritty \
    xorg \
    xorg-xinit \
+   neofetch \
    upx \
    git \
    tldr \
