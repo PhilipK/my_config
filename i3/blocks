@@ -29,13 +29,13 @@ separator_block_width=25
 
 [load_average]
 command=$SCRIPT_DIR/load_average/load_average
-interval=3
+interval=5
 
 [memory]
 label=
 command=$SCRIPT_DIR/memory/memory
 interval=5
-PERCENT=false
+PERCENT=true
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
@@ -48,6 +48,12 @@ interval=60
 command=pamixer --get-volume-human
 interval=once
 signal=10
+
+
+[battery3]
+command=$SCRIPT_DIR/battery3/battery2
+markup=pango
+interval=30
 
 [time]
 command=date '+%d-%m %H:%M'

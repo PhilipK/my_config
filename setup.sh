@@ -25,16 +25,24 @@ sudo pacman --needed -S neovim \
    alacritty \
    upx \
    git \
+   tldr \
    fakeroot \
    base-devel \
    pamixer \
    playerctl \
+   pipewire \
    xsel \
    rofi \
    xdotool \
    i3blocks \
-   picom
-
+   lxappearance \
+   pamixer \
+   acpi \
+   python3 \
+   picom \
+   xorg-xrandr \
+   wireless_tools \
+   arandr 
 
 sudo pacman --needed -S steam 
 
@@ -67,7 +75,8 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    spotify \
    workflowy \
    slack-desktop \
-   zoxide
+   zoxide \
+   ttf-font-awesome
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
 

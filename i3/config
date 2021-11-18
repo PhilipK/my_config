@@ -80,8 +80,13 @@ bindsym $mod+Shift+u move scratchpad
 # Show the first scratchpad window
 bindsym $mod+u scratchpad show
 
+# Wifi
+bindsym $mod+n exec rofi-wifi-menu.sh
 
-# Clipboard
+#Multi Monitor
+bindsym $mod+p exec monitor-select
+
+# Clipboard screenshot
 bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 # Reload/Restart Bindings
@@ -166,43 +171,6 @@ bindsym $mod+e layout toggle split
 #Wallpaper
 exec --no-startup-id nitrogen --restore
 
-# Load workspaces
-# Main workspace
-exec --no-startup-id i3-msg "append_layout /home/philip/.config/i3/workspaces/workspace-1.json"
-exec --no-startup-id chromium --new-window
-exec --no-startup-id alacritty -t Config --working-directory /home/philip/src/my_config
-
-#Messages
-
-exec --no-startup-id i3-msg "workspace $workspace3; append_layout /home/philip/.config/i3/workspaces/workspace-3.json"
-for_window [title="Messenger"] move to workspace $workspace3
-for_window [title="WhatsApp"] move to workspace $workspace3
-assign [class="Slack"] $workspace3
-
-exec --no-startup-id chromium --new-window "https://www.messenger.com/"
-exec --no-startup-id chromium --new-window  "https://web.whatsapp.com/"
-exec --no-startup-id slack
-
-
-#Music
-exec --no-startup-id spotify
-for_window [class="Spotify"] move to workspace $workspace10
-
-#Code
-assign [class="Code"] $workspace2
-exec --no-startup-id code
-
-#Games
-assign [class="Steam"] $workspace4
-exec --no-startup-id steam
-
-
-# Scratchpad
-exec --no-startup-id workflowy
-exec --no-startup-id /opt/WorkFlowy-x86_64.AppImage
-exec --no-startup-id sleep 3 && i3-msg '[ class="WorkFlowy" ] move scratchpad'
-
-
 #Gaps
 gaps inner 20
 
@@ -216,5 +184,41 @@ exec setxkbmap -layout dk
 #picom
 exec --no-startup-id picom --experimental-backends
 
-#Back to workspace 1
-exec --no-startup-id i3-msg "workspace $workspace1"
+
+#for_window [title="Messenger"] move to workspace $workspace3
+#for_window [title="WhatsApp"] move to workspace $workspace3
+for_window [class="Spotify"] move to workspace $workspace10
+#assign [class="Slack"] $workspace3
+assign [class="Code"] $workspace2
+assign [class="Steam"] $workspace4
+
+#
+## Load workspaces
+## Main workspace
+#exec --no-startup-id i3-msg "append_layout /home/philip/.config/i3/workspaces/workspace-1.json"
+#exec --no-startup-id chromium --new-window
+#exec --no-startup-id alacritty -t Config --working-directory /home/philip/src/my_config
+#
+##Messages
+#
+#exec --no-startup-id i3-msg "workspace $workspace3; append_layout /home/philip/.config/i3/workspaces/workspace-3.json"
+#
+#
+##Music
+#exec --no-startup-id spotify
+#
+##Code
+#exec --no-startup-id code
+#
+##Games
+#exec --no-startup-id steam
+#
+#
+## Scratchpad
+#exec --no-startup-id workflowy
+#exec --no-startup-id /opt/WorkFlowy-x86_64.AppImage
+#exec --no-startup-id sleep 3 && i3-msg '[ class="WorkFlowy" ] move scratchpad'
+#
+
+##Back to workspace 1
+#exec --no-startup-id i3-msg "workspace $workspace1"
