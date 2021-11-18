@@ -23,6 +23,7 @@ mkdir -p ~/my_tools/
 
 
 
+sudo pacman --needed -Syu
 #Pacman
 sudo pacman --needed -S neovim \
    alacritty \
@@ -52,6 +53,8 @@ sudo pacman --needed -S neovim \
    maim \
    pavucontrol \
    chromium \
+   nitrogen \
+   glances \
    xclip
 
 sudo pacman --needed -S steam 
