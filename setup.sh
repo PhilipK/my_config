@@ -40,6 +40,7 @@ sudo pacman --needed -S neovim \
    rofi \
    xdotool \
    i3blocks \
+   i3-gaps \
    lxappearance \
    pamixer \
    acpi \
