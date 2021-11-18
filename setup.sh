@@ -51,6 +51,7 @@ sudo pacman --needed -S neovim \
    arandr \
    maim \
    pavucontrol \
+   chromium \
    xclip
 
 sudo pacman --needed -S steam 
