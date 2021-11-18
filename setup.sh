@@ -10,6 +10,7 @@ mkdir -p ~/.config/i3/
 ln -sf ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
 ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
+ln -sf ${CUR_LOCATION}bash/.bash_profile ~/.bash_profile
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
