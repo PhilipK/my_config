@@ -110,3 +110,5 @@ echo "Nord Theme: https://chrome.google.com/webstore/detail/nord/abehfkkfjlplnja
 
 echo "Last Pass : https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd"
 echo "Vimium : https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb"
+echo "uBlock : https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en"
+echo "SponsorBlock : https://chrome.google.com/webstore/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone?hl=en"
