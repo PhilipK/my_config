@@ -42,7 +42,10 @@ sudo pacman --needed -S neovim \
    picom \
    xorg-xrandr \
    wireless_tools \
-   arandr 
+   arandr \
+   maim \
+   pavucontrol \
+   xclip
 
 sudo pacman --needed -S steam 
 
