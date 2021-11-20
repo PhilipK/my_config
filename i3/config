@@ -92,7 +92,7 @@ bindsym $mod+Ctrl+b exec --no-startup-id rofi-bluetooth
 bindsym $mod+a exec pavucontrol
 
 #Multi Monitor
-bindsym $mod+p exec monitor-select
+bindsym $mod+p exec arandr
 
 # Clipboard screenshot
 bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -109,6 +109,7 @@ bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/pn
   bindsym $mod+Shift+d exec rofi -theme nord-oneline -show window 
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
   bindsym $mod+b exec chromium
+  bindsym $mod+w exec chromium --new-window --app='https://workflowy.com/'
   bindsym $mod+Ctrl+Shift+s exec systemctl suspend 
   bindsym $mod+c exec code
 
@@ -178,7 +179,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
