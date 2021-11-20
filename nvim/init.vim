@@ -6,9 +6,6 @@ set clipboard=unnamedplus
 
 let mapleader = "\<Space>"
 
-" <leader><leader> toggles between buffers
-nnoremap <leader><leader> <c-^>
-
 " Stop showing help on f1 missclick
 map <F1> <Esc>
 imap <F1> <Esc>
@@ -183,9 +180,7 @@ nnoremap <silent> gæ <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 let g:EasyMotion_keys='hklyuiopnmqwertzxcvbasdgjf'
 
 
-" Move to word
-map  <silent> <c-f> <Plug>(easymotion-bd-w)
-"nmap <Leader>w <Plug>(easymotion-overwin-w)
+map <leader><leader> <Plug>(easymotion-prefix)
 
 
 nnoremap <silent><c-p> <cmd>Telescope find_files<cr>
