@@ -60,6 +60,11 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'easymotion/vim-easymotion'
 
+
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+
 call plug#end()
 
 
@@ -112,9 +117,36 @@ local opts = {
             }
         }
     },
-}
-
+ }
 require('rust-tools').setup(opts)
+EOF
+
+
+"Setup treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+   refactor = {
+      highlight_definitions = { enable = true },
+      highlight_current_scope = { enable = false },
+      smart_rename = {
+      enable = true,
+      keymaps = {
+         smart_rename = "grr",
+         }
+      },
+   navigation = {
+   enable = true,
+   keymaps = {
+      goto_definition_lsp_fallback =  "gnd",
+      list_definitions = "gnD",
+      list_definitions_toc = "gO",
+      goto_next_usage = "gnu",
+      goto_previous_usage = "gpu",
+      }
+   }
+
+},
+}
 EOF
 
 " Setup Completion
@@ -213,6 +245,6 @@ set softtabstop=3   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 
+"noremap <alt><shift>f lua vim.lsp.buf.formatting_sync(nil, 100)
 
-autocmd BufWritePre *.re lua vim.lsp.buf.formatting_sync(nil, 100)
-
+autocmd CursorMoved * exe printf('match Visual /\V\<%s\>/', escape(expand('<cword>'), '/\'))
