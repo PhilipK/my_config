@@ -216,3 +216,8 @@ set shiftwidth=3    " Indents will have a width of 4
 set softtabstop=3   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
+
+
+
+autocmd BufWritePre *.re lua vim.lsp.buf.formatting_sync(nil, 100)
+
