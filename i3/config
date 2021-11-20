@@ -53,8 +53,7 @@ set $mouse_move /home/philip/my_tools/mouse_center
   bindsym $mod+Shift+l move right; exec --no-startup-id $mouse_move
   bindsym $mod+Shift+space floating toggle
   bindsym $mod+f fullscreen toggle
-  bindsym $mod+v split v
-  bindsym $mod+Shift+v split h
+  bindsym $mod+v split toggle
   #bindsym $mod+h split h
   #bindsym $mod+space focus mode_toggle
   bindsym $mod+r mode "resize"
