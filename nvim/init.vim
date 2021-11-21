@@ -53,6 +53,8 @@ Plug 'nvim-telescope/telescope.nvim'
 " Color scheme used in the GIFs!
 Plug 'arcticicestudio/nord-vim'
 
+"Plug 'jacoborus/tender.vim'
+
 Plug 'hoob3rt/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
 Plug 'kyazdani42/nvim-web-devicons'
@@ -67,7 +69,9 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
 call plug#end()
 
-
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 lua require'lspconfig'.rust_analyzer.setup({})
 
@@ -232,6 +236,7 @@ set signcolumn=yes
 set termguicolors
 colorscheme nord
 
+hi Normal guibg=NONE ctermbg=NONE
 
 set tabstop=3       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
