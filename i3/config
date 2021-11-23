@@ -200,4 +200,5 @@ assign [class="Steam"] $workspace4
 for_window [class="Steam" title="Friends List"] floating enable
 
 
+bindsym $mod+ctrl+space exec setxkbmap -layout dk -model pc105
 exec_always "setxkbmap -layout dk -model pc105"
