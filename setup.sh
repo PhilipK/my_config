@@ -6,7 +6,11 @@ mkdir -p ~/.config/i3blocks/
 mkdir -p ~/.config/i3/
 
 
+rm -rf ~/my_tools/
+
+
 #Symlink config files
+ln -sf ${CUR_LOCATION}scripts/ ~/my_tools 
 ln -sf ${CUR_LOCATION}alacritty/alacritty.yml ~/.alacritty.yml
 ln -sf ${CUR_LOCATION}nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ${CUR_LOCATION}bash/.bashrc ~/.bashrc
@@ -14,17 +18,18 @@ ln -sf ${CUR_LOCATION}bash/.bash_profile ~/.bash_profile
 ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 #ln -sf ${CUR_LOCATION}i3/workspaces ~/.config/i3/workspaces
-ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
+#ln -sf ${CUR_LOCATION}scripts/mouse_center ~/my_tools/mouse_center 
 ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
 ln -sf ${CUR_LOCATION}scripts/messages ~/my_tools/messages
 ln -sf ${CUR_LOCATION}xorg/xinitrc ~/.xinitrc
 
 sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
-mkdir -p ~/my_tools/
 
 
 
 sudo pacman --needed -Syu
+
+
 #Pacman
 sudo pacman --needed -S neovim \
    alacritty \
@@ -45,7 +50,6 @@ sudo pacman --needed -S neovim \
    i3blocks \
    i3-gaps \
    lxappearance \
-   pamixer \
    acpi \
    python3 \
    picom \
@@ -57,8 +61,9 @@ sudo pacman --needed -S neovim \
    chromium \
    nitrogen \
    glances \
-   bluez \
+   bluez \ 
    bluez-utils \
+   rust-analyzer \
    xclip
 
 sudo pacman --needed -S steam 
@@ -86,6 +91,8 @@ cd yay-git
 makepkg -si
 
 fi
+
+yay -Syu
 
 yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-source-code-pro \
    visual-studio-code-bin \
