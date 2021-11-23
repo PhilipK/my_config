@@ -226,9 +226,12 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 noremap <silent> <c-s> :update<CR>
 
+nnoremap <F3> :update<CR> :! cargo fmt<cr>
 nnoremap <F4> :update<CR> :! cargo check<cr>
 nnoremap <F5> :update<CR> :! RUST_BACKTRACE=full cargo run<cr>
+nnoremap <shift><F5> :update<CR> :! RUST_BACKTRACE=full cargo run --release<cr>
 nnoremap <F6> :update<CR> :!cargo test<cr>
+nnoremap <shift><F6> :update<CR> :!cargo test --release<cr>
 
 " have a fixed column for the diagnostics to appear in
 " this removes the jitter when warnings/errors flow in
