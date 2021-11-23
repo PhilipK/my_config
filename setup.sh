@@ -100,6 +100,7 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    workflowy \
    slack-desktop \
    zoxide \
+   bluetooth-autoconnect \
    rofi-bluetooth-git 
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
@@ -125,8 +126,9 @@ mkdir ~/src/
 git clone https://github.com/vivien/i3blocks-contrib ~/src/i3blocks-contrib
 fi
 
-i
 
+#Services
+sudo systemctl enable bluetooth-autoconnect
 
 
 echo "Here some links to visit"
