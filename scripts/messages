@@ -1,1 +1,5 @@
-/home/philip/src/my_config/scripts/messages
+#!/bin/bash
+i3-msg "workspace ; append_layout /home/philip/.config/i3/workspaces/workspace-3.json" &
+slack &
+chromium --new-window --app='https://web.whatsapp.com/' &
+chromium --new-window --app='https://www.messenger.com/' &
