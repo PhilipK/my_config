@@ -8,3 +8,6 @@
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
    startx
 fi
+
+setxkbmap -layout dk
+
