@@ -59,7 +59,18 @@ sudo pacman --needed -S neovim \
    bluez \ 
    bluez-utils \
    rust-analyzer \
+   docker \
+   virtualbox \
+   virtualbox-host-modules-arch \
+   thunar \
    xclip
+
+
+#Printers
+sudo pacman --needed -S cups \ 
+deepin-printer \
+avahi
+
 
 sudo pacman --needed -S steam 
 

@@ -82,10 +82,11 @@ bindsym $mod+u scratchpad show
 # Wifi
 bindsym $mod+n exec rofi-wifi-menu.sh
 
-# Bluetooth
- 
+# Bluetooth 
 bindsym $mod+Ctrl+b exec --no-startup-id rofi-bluetooth
 
+# Filebrowser
+bindsym $mod+o exec --no-startup-id thunar
 
 #Audio
 bindsym $mod+a exec pavucontrol
