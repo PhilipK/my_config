@@ -184,8 +184,7 @@ bindsym $mod+e layout toggle split
 
 
 #Wallpaper
-exec --no-startup-id nitrogen --restore
-
+exec --no-startup-id nitrogen --set-zoom-fill --random ~/Wallpapers/ --save
 #Gaps
 bindsym $mod+g exec i3-msg 'gaps inner all toggle 30'
 
