@@ -119,8 +119,6 @@ fi
 
 export PATH="$PATH:/home/philip/my_tools"
 
-export PATH="$PATH:/home/philip/.vector/bin"
-
 eval "$(zoxide init bash)"
 
 

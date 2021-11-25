@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+load="$(uptime | grep -o 'load average:[^;]*' | grep -o '[[:digit:]]*\.[[:digit:]]*, [[:digit:]]*\.[[:digit:]]*, [[:digit:]]*\.[[:digit:]]*')"
+
+# full text
+echo "$load"
+
+# short text
+echo "$load"
+

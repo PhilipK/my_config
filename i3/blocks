@@ -26,10 +26,9 @@ separator_block_width=25
 #interval=10
 #LABEL=
 #DECIMALS=0
-
-[load_average]
-command=$SCRIPT_DIR/load_average/load_average
-interval=5
+[my_load]
+command=/home/philip/src/my_config/i3/myblocks/load_average
+interval=1
 
 [memory]
 label=
