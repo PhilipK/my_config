@@ -7,7 +7,7 @@
 
 
 # Global properties
-separator=true
+separator=false
 separator_block_width=25
 
 #[i3-focusedwindow]
@@ -28,20 +28,18 @@ separator_block_width=25
 #DECIMALS=0
 [my_load]
 command=/home/philip/src/my_config/i3/myblocks/load_average
-interval=1
-
-[memory]
-label=
-command=$SCRIPT_DIR/memory/memory
 interval=5
-PERCENT=true
+
+[my_mem]
+command=/home/philip/src/my_config/scripts/minimemblock
+interval=5
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
 LABEL=
 DIR=/
 ALERT_LOW=10
-interval=60
+interval=5
 
 [volume]
 command=pamixer --get-volume-human
@@ -52,9 +50,9 @@ signal=10
 [battery3]
 command=$SCRIPT_DIR/battery3/battery2
 markup=pango
-interval=30
+interval=5
 
 [time]
 command=date '+%d-%m %H:%M'
-interval=59
+interval=5
 

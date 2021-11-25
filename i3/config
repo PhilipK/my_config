@@ -186,7 +186,10 @@ bindsym $mod+e layout toggle split
 #Wallpaper
 exec --no-startup-id nitrogen --set-zoom-fill --random ~/Wallpapers/ --save
 #Gaps
-bindsym $mod+g exec i3-msg 'gaps inner all toggle 30'
+bindsym $mod + plus exec i3-msg 'gaps inner current plus 5'
+bindsym $mod + minus exec i3-msg 'gaps inner current minus 5'
+
+bindsym $mod+g exec i3-msg 'gaps inner current toggle 30'
 
 smart_gaps on
 smart_borders no_gaps

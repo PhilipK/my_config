@@ -55,16 +55,17 @@ sudo pacman --needed -S neovim \
    pavucontrol \
    chromium \
    nitrogen \
-   glances \
-   bluez \ 
-   bluez-utils \
-   rust-analyzer \
+   glances 
+   
+
+
+sudo pacman --needed -S rust-analyzer \
+   bluez \
    docker \
    virtualbox \
    virtualbox-host-modules-arch \
    thunar \
    xclip
-
 
 #Printers
 sudo pacman --needed -S cups \ 
@@ -107,6 +108,7 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    slack-desktop \
    zoxide \
    bluetooth-autoconnect \
+   bluez-utils \
    rofi-bluetooth-git 
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy
