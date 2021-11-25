@@ -27,7 +27,7 @@ separator_block_width=25
 #LABEL=
 #DECIMALS=0
 [my_load]
-command=/home/philip/src/my_config/i3/myblocks/load_average
+command=/home/philip/src/my_config/scripts/minimemblock load
 interval=5
 
 [my_mem]
