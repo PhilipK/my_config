@@ -13,13 +13,12 @@ font:
    style: Bold Italic
   size: 6
 cursor:
-  style:
-    shape: Beam
+  style: Beam
   vi_mode_style: Block
 live_config_reload: true
 
 
-background_opacity: 0.9
+background_opacity: 0.96
 
 
 hints:

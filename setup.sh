@@ -55,16 +55,15 @@ sudo pacman --needed -S neovim \
    pavucontrol \
    chromium \
    nitrogen \
-   glances 
-   
-
-
-sudo pacman --needed -S rust-analyzer \
+   glances \
+   rust-analyzer \
    bluez \
    docker \
    virtualbox \
    virtualbox-host-modules-arch \
+   shotgun \
    thunar \
+   gimp \
    xclip
 
 #Printers
