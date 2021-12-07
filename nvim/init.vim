@@ -67,6 +67,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
+"HCL for hashicorp files
+Plug 'jvirtanen/vim-hcl'
+
 call plug#end()
 
 if (has("termguicolors"))
