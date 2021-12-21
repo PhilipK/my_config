@@ -8,6 +8,7 @@ mkdir -p ~/.config/i3/
 
 rm -rf ~/my_tools
 rm -rf ~/.config/nvim
+rm -rf ~/.config/helix
 
 #Symlink config files
 ln -sf ${CUR_LOCATION}scripts/ ~/my_tools 
@@ -19,6 +20,7 @@ ln -sf ${CUR_LOCATION}i3/config ~/.config/i3/config
 ln -sf ${CUR_LOCATION}i3/blocks ~/.config/i3blocks/config
 ln -sf ${CUR_LOCATION}rofi ~/.config/rofi
 ln -sf ${CUR_LOCATION}xorg/xinitrc ~/.xinitrc
+ln -sf ${CUR_LOCATION}helix/config.toml ~/.config/helix/config.toml
 sudo ln -sf ${CUR_LOCATION}picom/picom.conf /etc/xdg/picom.conf
 
 sudo pacman --needed -Syu
@@ -108,6 +110,8 @@ yay  --nocleanmenu --nodiffmenu --noeditmenu --norebuild --needed -S nerd-fonts-
    zoxide \
    bluetooth-autoconnect \
    bluez-utils \
+   helix-git \
+   shutter \
    rofi-bluetooth-git 
 
 ln -sf /opt/WorkFlowy-x86_64.AppImage ~/my_tools/workflowy

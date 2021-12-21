@@ -26,6 +26,14 @@ separator_block_width=25
 #interval=10
 #LABEL=
 #DECIMALS=0
+
+[pacman-updates]
+command=$SCRIPT_DIR/arch-update/arch-update
+interval=3600
+markup=pango
+QUIET=true
+
+
 [my_load]
 command=/home/philip/src/my_config/scripts/minimemblock load
 interval=5

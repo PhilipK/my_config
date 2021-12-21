@@ -189,19 +189,19 @@ exec --no-startup-id nitrogen --set-zoom-fill --random ~/Wallpapers/ --save
 bindsym $mod + plus exec i3-msg 'gaps inner current plus 5'
 bindsym $mod + minus exec i3-msg 'gaps inner current minus 5'
 
-bindsym $mod+g exec i3-msg 'gaps inner current toggle 30'
+bindsym $mod+g exec i3-msg 'gaps inner all toggle 17'
 
 #smart_gaps on
 #smart_borders no_gaps
 
 
 #picom
-exec --no-startup-id picom --experimental-backends
+#exec --no-startup-id picom --experimental-backends
 
 for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Steam"] $workspace4
 for_window [class="Steam" title="Friends List"] floating enable
-for_window [class="Steam" title="Steam - News"] floating enable
+#for_window [class="Steam" title="Steam - News"] floating enable
 
 bindsym $mod+ctrl+space exec setxkbmap -layout dk -model pc105
-exec_always "setxkbmap -layout dk -model pc105"
+#exec_always "setxkbmap -layout dk -model pc105"

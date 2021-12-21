@@ -1,0 +1,20 @@
+theme = "nord"
+
+
+[keys.normal]
+C-s = ":write"
+"C-l" = "goto_next_diag"
+#"C-space"=["insert_mode","completion"]
+
+
+[keys.insert]
+"C-space"="completion"
+
+[editor]
+shell = ["bash","-c"]
+idle-timeout = 100
+auto-pairs = false
+line-number = "relative"
+
+[lsp]
+display-messages = true
